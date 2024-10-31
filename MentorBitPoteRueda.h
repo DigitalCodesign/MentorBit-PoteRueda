@@ -36,19 +36,20 @@
 #define MentorBitPoteRueda_h
 
 #include <arduino.h>
+#include <MentorPort.h>
 
-class MentorBitPoteRueda
+class MentorBitPoteRueda : public MentorPort
 {
     public:
 
         MentorBitPoteRueda(uint8_t pin_potenciometro, uint8_t pin_led);
         uint16_t obtenerLectura();
         void encenderLed(bool value);
+        void configPort(const Port& port) override;
 
     private:
 
-        uint8_t _potenciometer_pin;
-        uint8_t _led_pin;
+        Port _port;
 };
 
 #endif
