@@ -42,7 +42,7 @@ class MentorBitPoteRueda : public MentorPort
 {
     public:
 
-        MentorBitPoteRueda(uint8_t pin_potenciometro, uint8_t pin_led);
+        MentorBitPoteRueda(uint8_t pin_potenciometro = 0, uint8_t pin_led = 0);
         uint16_t obtenerLectura();
         void encenderLed(bool value);
         void configPort(const Port& port) override;
